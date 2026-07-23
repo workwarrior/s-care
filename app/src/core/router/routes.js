@@ -1,7 +1,7 @@
-import { DashboardPage } from "../../features/dashboard/dashboard.page";
-import { InspectionPage } from "../../features/inspection/inspection.page";
-import { SettingsPage } from "../../features/settings/settings.page";
-import { SyncPage } from "../../features/sync/sync.page";
+import { DashboardPage } from "../../modules/dashboard/dashboard.page";
+import { InspectionPage } from "../../modules/inspection/pages/inspection.page";
+import { SettingsPage } from "../../modules/settings/settings.page";
+import { SyncPage } from "../../modules/sync/sync.page";
 
 export const routes = {
 

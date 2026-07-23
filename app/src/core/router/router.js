@@ -1,29 +1,26 @@
 import { routes } from "./routes";
 
-/**
- * Render current page
- * @returns {string}
- */
-export function Router(){
+export async function Router() {
 
     const hash = location.hash.replace("#", "") || "/";
 
-    const page = routes[hash];
+    const pageFactory = routes[hash];
 
-    if(page){
+    if (!pageFactory) {
 
-        return page();
+        return {
+            html: `
+                <div class="container py-4">
+                    <h2>404</h2>
+                    <p>Page Not Found</p>
+                </div>
+            `,
+            bind() {},
+            destroy() {}
+        };
 
     }
 
-    return `
-        <div class="container py-4">
-
-            <h2>404</h2>
-
-            <p>Page Not Found</p>
-
-        </div>
-    `;
+    return await pageFactory();
 
 }
