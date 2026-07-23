@@ -1,0 +1,17 @@
+body{
+
+    background:var(--background);
+
+}
+
+.card{
+
+    background:var(--surface);
+
+    border:none;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}

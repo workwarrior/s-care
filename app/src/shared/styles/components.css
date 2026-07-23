@@ -1,0 +1,23 @@
+.sc-button{
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    border-radius:var(--radius);
+
+    padding:12px 20px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.sc-button:hover{
+
+    background:var(--primary-dark);
+
+}

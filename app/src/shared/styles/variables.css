@@ -1,0 +1,36 @@
+:root{
+
+  /* Brand */
+  --primary:#1565C0;
+  --primary-dark:#0D47A1;
+  --secondary:#26A69A;
+
+  /* Status */
+  --success:#2E7D32;
+  --warning:#EF6C00;
+  --danger:#C62828;
+  --info:#0288D1;
+
+  /* Background */
+  --background:#F5F7FA;
+  --surface:#FFFFFF;
+
+  /* Text */
+  --text:#263238;
+  --text-light:#607D8B;
+
+  /* Border */
+  --border:#E0E0E0;
+
+  /* Radius */
+  --radius-sm:8px;
+  --radius:12px;
+  --radius-lg:20px;
+
+  /* Shadow */
+  --shadow:0 2px 8px rgba(0,0,0,.08);
+
+  /* Transition */
+  --transition:200ms ease;
+
+}
