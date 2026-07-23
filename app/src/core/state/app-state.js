@@ -4,15 +4,25 @@
 
 const state = {
 
+    // Application
     user: null,
-
     online: navigator.onLine,
-
-    syncQueue: 0,
-
     version: "0.1.0",
 
-    inspectionToday: 0
+    // Dashboard
+    inspectionToday: 0,
+    syncQueue: 0,
+
+    // UI State
+    ui: {
+
+        inspection: {
+
+            showForm: false
+
+        }
+
+    }
 
 };
 
@@ -35,6 +45,14 @@ export function setState(data){
     Object.assign(state,data);
 
     listeners.forEach(fn=>fn(state));
+
+}
+
+export function updateUI(page, data) {
+
+    Object.assign(state.ui[page], data);
+
+    listeners.forEach(fn => fn(state));
 
 }
 

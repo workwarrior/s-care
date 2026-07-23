@@ -1,5 +1,8 @@
 import { InspectionService } from "../services/inspection.service.js";
+import { InspectionForm } from "../components/inspection-form.js";
+import { getState, updateUI } from "../../../core/state/app-state.js";
 
+const { ui } = getState();
 const service = new InspectionService();
 
 export async function InspectionPage() {
@@ -29,6 +32,12 @@ export async function InspectionPage() {
                     </button>
 
                 </div>
+
+                ${
+                    ui.inspection.showForm
+                        ? InspectionForm()
+                        : ""
+                }
 
                 <div id="inspection-list">
 
@@ -61,19 +70,13 @@ export async function InspectionPage() {
 
             if (!button) return;
 
-            button.onclick = async () => {
+            button.onclick = () => {
 
-                const result = await service.create({
+                updateUI("inspection", {
 
-                    title: "APAR ICU",
-                    location: "ICU",
-                    inspector: "Roy"
+                    showForm: true
 
                 });
-
-                console.log(result);
-
-                location.reload();
 
             };
 
